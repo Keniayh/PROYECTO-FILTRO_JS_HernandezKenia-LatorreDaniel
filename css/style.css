@@ -1,0 +1,21 @@
+body {
+    overflow: hidden;
+    margin: 0%;
+    padding: 0%;
+    width: 100vw;
+    height: 100vh;
+   /*  background: radial-gradient(    rgb(255, 255, 255), blue); */
+}
+
+.container {
+
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    /* Ajusta el valor para cambiar el tamaño del triángulo */
+    border-right: 50px solid transparent;
+    /* Ajusta el valor para cambiar el tamaño del triángulo */
+    border-bottom: 86.6px solid red;
+    /* Ajusta el color y el tamaño para cambiar el aspecto del triángulo */
+
+}
