@@ -1,0 +1,254 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #14152C;
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerTitle{
+    height: 10vh;
+    width: auto;
+}
+
+.container{
+    display: grid;
+    height: 90vh;
+    width: 100vw;
+    grid-template-columns: 25vw 50vw 25vw;  
+    background: linear-gradient(to top,rgb(141, 158, 255) , 20%, #14152C);
+}
+
+.caja2{
+    display: grid;
+    grid-template-rows: 70vh 20vh;
+    
+}
+.headerTitle{
+    height: 10vh;
+    color: white;
+    font-size: 5vw;
+}
+
+.caja1 {
+    height: 90vh;
+    color: white;
+    font-size: 2vw;
+    margin: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.caja2{
+    height: 90vh;
+    color: white;
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.caja3{
+    height: 90vh;
+    color: white;
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#lato{
+    margin: 2vw 0;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center; 
+}
+
+
+#prevButton {
+    margin-bottom: -3vw; /* 30px / 8vw * 100 */
+    margin-right: 1vw; /* 10px / 8vw * 100 */
+}
+
+#nextButton {
+    margin-bottom: -3vw; /* 30px / 8vw * 100 */
+}
+
+.button-name {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.2) 0 0.25vw 0.5vw, rgba(45, 35, 66, 0.15) 0 0.875vw 1.625vw -0.375vw, #D6D6E7 0 -0.375vw 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 4vw; /* 48px / 8vw * 100 */
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 1vw; /* 16px / 8vw * 100 */
+    padding-right: 1vw; /* 16px / 8vw * 100 */
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 1vw; /* 18px / 8vw * 100 */
+}
+
+.button-name:focus {
+    box-shadow: #D6D6E7 0 0 0 0.1875vw inset, rgba(45, 35, 66, 0.4) 0 0.25vw 0.5vw, rgba(45, 35, 66, 0.3) 0 0.875vw 1.625vw -0.375vw, #D6D6E7 0 -0.375vw 0 inset;
+}
+
+.button-name:hover {
+    box-shadow: rgba(45, 35, 66, 0.3) 0 0.5vw 1vw, rgba(45, 35, 66, 0.2) 0 0.875vw 1.625vw -0.375vw, #D6D6E7 0 -0.375vw 0 inset;
+    transform: translateY(-0.25vw);
+}
+
+.button-name:active {
+    box-shadow: #D6D6E7 0 0.375vw 0.875vw inset;
+    transform: translateY(0.25vw);
+}
+.statusCircle{
+    width: 2vw;
+    height: 2vw;
+    margin: 2vw 1vw 1vw 1vw;
+    border-radius: 50%;
+}
+.status{
+    width: 10vw;
+}
+#circulito{
+    width: 2vw;
+    height: 2vw;
+}
+#letras{
+    font-size: 1vw;
+}
+img{
+    width: 20vw;
+    height: 20vw;
+}
+#coso{
+    width: 3vw;
+    height: 3vw;
+    z-index: 19;
+}
+.cosodiv{
+    position: absolute;
+    top: 28%;
+    left: 3%;
+    transform: translate(-50%, -50%);
+}
+.cosodiv2{
+    position: absolute;
+    top: 32%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+}
+.caja{
+    margin: 2vw;
+}
+.options{
+    position: absolute;
+    top: 97%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#options{
+    width: 35vw;
+    height: 6vw;
+}
+#company{
+    width: 2vw;
+    height: 2vw;
+}
+.company{
+    position: absolute;
+    top: 95%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+#companylet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#capsules{
+    width: 2vw;
+    height: 2vw;
+}
+.capsules{
+    position: absolute;
+    top: 95%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+}
+#capsuleslet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#rockets{
+    width: 2vw;
+    height: 2vw;
+}
+.rockets{
+    position: absolute;
+    top: 95%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+}
+#rocketslet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#history{
+    width: 2vw;
+    height: 2vw;
+}
+.history{
+    position: absolute;
+    top: 95%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+#historylet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
