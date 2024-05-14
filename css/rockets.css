@@ -2,13 +2,45 @@ body{
     margin: 0;
     padding: 0;
     background-color: #14152C;
-    overflow: hidden;
 }
 
 
+.infoRoc{
+    display: flex;
+    flex-direction: row;
+    margin: 1vw;
+}
 
+#icono{
+    width: 3vw;
+    margin: 1vw 0;
+}
+
+h2,p{
+    color: white;
+    margin: 1vw;
+}
+
+h2{
+    font-size: 1vw;
+}
+
+p{
+    font-size: 1vw;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    margin: 1vw;
+    font-size: 1vw;
+}
 .encabezado{
     height: 10vh;
+}
+
+#namee{
+    font-size: 2vw;
 }
 
 .container{
@@ -104,5 +136,5 @@ body{
 }
 
 #options{
-    width: 50vw;
+    width: 35vw;
 }
