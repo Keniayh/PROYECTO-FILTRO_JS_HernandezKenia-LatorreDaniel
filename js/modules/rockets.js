@@ -1,6 +1,6 @@
 function fetchRockets(index) {
     // Agrega la clase de animación de carga al elemento del encabezado cuando se inicia la solicitud a la API
-    document.getElementById("headerRockets").classList.add("add");
+    document.getElementById("headerRockets").classList.add("loding");
 
     let url = 'https://api.spacexdata.com/v4/rockets/';
     fetch(url)
@@ -25,7 +25,7 @@ function fetchRockets(index) {
         .catch(error => {
             console.error('Error:', error);
             // En caso de error, asegúrate de quitar la clase de animación de carga también
-            document.getElementById("headerRockets").classList.remove("add");
+            document.getElementById("headerRockets").classList.remove("loding");
         });
 }
 
@@ -69,6 +69,60 @@ function displayHeaderRockets(rocket) {
     let iRocket = document.getElementById("info4");
     iRocket.innerHTML = `
         <h2>Read more about the coete</h2>
-        <a href="${rocket.wikipedia}">Wikipedia</a>
+        <p><a href="${rocket.wikipedia}" id="wiki">Wikipedia</a></p>
+    `;
+    let moreInfo = document.getElementById("moreInfo")
+    moreInfo.innerHTML = `
+        <div class="infoMore" id="more1">
+            <span id="spam">Type</span>
+            <strong id="strom">${rocket.type}</strong>
+        </div>
+        <div class="infoMore" id="more1">
+            <span id="spam">Rocket in service</span>
+            <strong id="strom">${rocket.active? 'Active' : 'Low'}</strong>
+        </div>
+        <div class="infoMore" id="more1">
+            <span id="spam">Number of stages</span>
+            <strong id="strom">${rocket.stages}</strong>
+        </div>
+        <div class="infoMore" id="more1">
+            <span id="spam">Number of boosters</span>
+            <strong id="strom">${rocket.boosters}</strong>
+        </div>
+        <div class="infoMore" id="more1">
+            <span id="spam">Landing legs</span>
+            <strong id="strom">${rocket.landing_legs.number}</strong>
+        </div>
+        <div class="infoMore" id="more1">
+            <span id="spam">Leg material</span>
+            <strong id="strom">${rocket.landing_legs.material}</strong>
+        </div>
+    `;
+    let moreInfoo = document.getElementById("moreInfoo")
+    moreInfoo.innerHTML = `
+        <div class="infoMore" id="more1">
+            <span id="spam">Type</span>
+            <strong id="strom">${rocket.engines.type} ${rocket.engines.version}</strong>
+        </div>
+        <div class="infoMore" id="more1">
+            <span id="spam">Maximum power loss</span>
+            <strong id="strom">${rocket.engines.engine_loss_max}</strong>
+        </div>
+        <div class="infoMore" id="more1">
+            <span id="spam">Engine availability</span>
+            <strong id="strom">${rocket.engines.layout}</strong>
+        </div>
+        <div class="infoMore" id="more1">
+            <span id="spam">Number of engines</span>
+            <strong id="strom">${rocket.engines.number}</strong>
+        </div>
+        <div class="infoMore" id="more1">
+            <span id="spam">Stage 1 fuel</span>
+            <strong id="strom">${rocket.engines.propellant_1}</strong>
+        </div>
+        <div class="infoMore" id="more1">
+            <span id="spam">Stage 2 fuel</span>
+            <strong id="strom">${rocket.engines.propellant_2}</strong>
+        </div>
     `;
 }
