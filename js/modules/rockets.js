@@ -17,7 +17,7 @@ function fetchRockets(index) {
                 document.getElementById("headerRockets").classList.remove("add");
                 // Muestra el nombre del cohete en el encabezado
                 displayHeaderRockets(rocket);
-                console.log(rocket);
+                console.log(rocket);      
             } else {
                 console.log('Índice de cohete fuera de rango.');
             }
@@ -32,9 +32,12 @@ function fetchRockets(index) {
 fetchRockets(1);
 
 function displayHeaderRockets(rocket) {
+    var valor = (rocket.cost_per_launch)
+    var numeroFormateado = "$ " + new Intl.NumberFormat('es-ES').format(valor);
+
     let generalInfo = document.getElementById("headerRockets");
     generalInfo.innerHTML = `
-        <p>${rocket.name}</p>
+        <p id="namee">${rocket.name}</p>
     `;
     let imageRocket = document.getElementById("image");
     imageRocket.innerHTML = `
@@ -45,5 +48,27 @@ function displayHeaderRockets(rocket) {
         <img src="${rocket.flickr_images[4]}" alt="imagen1" class="imgNave">
         <img src="${rocket.flickr_images[5]}" alt="imagen1" class="imgNave">
         
+    `;
+    let infoRocket = document.getElementById("info1");
+    infoRocket.innerHTML = `
+        <h2>${rocket.country}</h2>
+        <p>${rocket.description}</p>
+
+    `;
+
+    let infRocket = document.getElementById("info2");
+    infRocket.innerHTML = `
+        <h2>The estimated cost per rocket launch</h2>
+        <p>${numeroFormateado}</p>
+    `;
+    let inRocket = document.getElementById("info3");
+    inRocket.innerHTML = `
+        <h2>The date of the first flight of the rocket</h2>
+        <p>${rocket.first_flight}</p>
+    `;
+    let iRocket = document.getElementById("info4");
+    iRocket.innerHTML = `
+        <h2>Read more about the coete</h2>
+        <a href="${rocket.wikipedia}">Wikipedia</a>
     `;
 }
