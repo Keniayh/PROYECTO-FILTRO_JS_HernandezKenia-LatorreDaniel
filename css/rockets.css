@@ -80,3 +80,25 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+/*///////////////////////////////////////////////*/
+
+.botones,
+.infoNave {
+    margin: 2vw;
+}
+
+.box3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#botones{
+    border: 1px solid#14152C;
+    color: white;
+    background-color: rgb(85, 85, 190);
+    width: 2vw;
+    height: 4vh;
+}

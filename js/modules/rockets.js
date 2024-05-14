@@ -34,7 +34,7 @@ fetchRockets(1);
 function displayHeaderRockets(rocket) {
     let generalInfo = document.getElementById("headerRockets");
     generalInfo.innerHTML = `
-        <div class="headerTitle">${rocket.name}</div>
+        <p>${rocket.name}</p>
     `;
     let imageRocket = document.getElementById("image");
     imageRocket.innerHTML = `
