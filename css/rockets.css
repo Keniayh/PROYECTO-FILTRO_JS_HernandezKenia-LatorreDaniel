@@ -341,8 +341,27 @@ progress[value]::-webkit-progress-value {
 
 .caja1{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.circle{
-    
+.circle {
+    color: var(--color--five);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 150px; /* Ajusta el tamaño según sea necesario */
+    height: 150px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 50%;
+    background: radial-gradient(closest-side, #1d1f38 85%, transparent 85% 100%), conic-gradient(var(--color--three) 80%, transparent 0);
+    transform: rotate(180deg); /* Rotación para empezar desde la parte superior */
+}
+
+.circle-progress-bar{
+    margin: 1vw;
+}
+
+#speed{
+    display: flex;
 }

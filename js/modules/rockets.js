@@ -1,20 +1,28 @@
-function generateCircularProgressBar(percent, diameter, strokeWidth) {
+function generateCircularProgressBar(percent, diameter, strokeWidth, title, kN, lbf) {
     const radius = diameter / 2;
     const circumference = Math.PI * (radius * 2);
     const progressLength = ((100 - percent) / 100) * circumference;
+    const textMargin = 0.5; // Margen entre los textos en vw
+    const textX = radius;
+    const textY1 = radius - 30;
+    const textY2 = radius;
+    const textY3 = radius + 30;
+    const textY4 = radius + 60;
+    const fontSize = "0.7vw"; // Tamaño de la fuente
 
     return `
         <div class="circle-progress-bar">
-            <svg width="${diameter}" height="${diameter}">
-                <circle cx="${radius}" cy="${radius}" r="${radius - (strokeWidth / 2)}" fill="none" stroke="#ddd" stroke-width="${strokeWidth}"></circle>
+            <svg width="${diameter}%" height="${diameter}" >
                 <circle cx="${radius}" cy="${radius}" r="${radius - (strokeWidth / 2)}" fill="none" stroke="#007bff" stroke-width="${strokeWidth}" stroke-dasharray="${circumference}" stroke-dashoffset="${progressLength}"></circle>
+                <text x="${textX}" y="${textY1}" text-anchor="middle" dominant-baseline="middle" fill="white" font-weight="bold" font-size="${fontSize}">${title}</text>
+                <text x="${textX}" y="${textY2}" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="${fontSize}">${percent.toFixed(2)}%</text>
+                <text x="${textX}" y="${textY3}" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="${fontSize}">${kN}kN</text>
+                <text x="${textX}" y="${textY4}" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="${fontSize}">${lbf}Lbf</text>
             </svg>
-            <div class="circleInfo">
-                <strong>${percent.toFixed(2)}%</strong>
-            </div>
         </div>
     `;
 }
+
 
 
 function fetchRockets(index) {
@@ -238,26 +246,27 @@ function displayHeaderRockets(rocket) {
     // Calcular los porcentajes
     let percent = ((rocket.engines.thrust_sea_level.kN) / ((rocket.engines.thrust_sea_level.kN + rocket.engines.thrust_vacuum.kN)) * 100);
     let percentt = ((rocket.engines.thrust_vacuum.kN) / ((rocket.engines.thrust_sea_level.kN + rocket.engines.thrust_vacuum.kN)) * 100);
-
+    let title = "Atmospheric acceleration";
+    let titlee = "Speed in space";
+    let kN = (rocket.engines.thrust_sea_level.kN);
+    let kNN = (rocket.engines.thrust_vacuum.kN);
+    let lbf = new Intl.NumberFormat('es-ES').format((rocket.engines.thrust_sea_level.lbf));
+    let lbff = new Intl.NumberFormat('es-ES').format((rocket.engines.thrust_vacuum.lbf));
     // Variables para el tamaño del círculo de progreso
-    const diameter = 100; // Diámetro del círculo en píxeles
+    const diameter = 170; // Diámetro del círculo en píxeles
     const strokeWidth = 10; // Ancho de la barra de progreso en píxeles
     const radius = diameter / 2;
-    const circumference = Math.PI * (radius * 2);
-    const progressLength = (percent / 100) * circumference;
-    const progressLengtht = (percentt / 100) * circumference;
-
 
     // Limpiar el contenido existente en el contenedor de velocidad
     let speedRocket = document.getElementById("speed");
     speedRocket.innerHTML = '';
 
     // Generar HTML para la primera barra de progreso (Atmospheric acceleration)
-    let progressBarHTML = generateCircularProgressBar(percent, diameter, strokeWidth);
+    let progressBarHTML = generateCircularProgressBar(percent, diameter, strokeWidth, title, kN, lbf);
     speedRocket.innerHTML = progressBarHTML;
 
     // Generar HTML para la segunda barra de progreso (Speed in space)
-    let progressBarHTMLt = generateCircularProgressBar(percentt, diameter, strokeWidth);
+    let progressBarHTMLt = generateCircularProgressBar(percentt, diameter, strokeWidth, titlee, kNN, lbff);
     speedRocket.innerHTML += progressBarHTMLt;
 }
 
