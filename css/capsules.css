@@ -5,6 +5,15 @@ body{
     overflow: hidden;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url(../Storage/font/Roboto-Regular.ttf);
+}
+
+*{
+    font-family: 'Roboto';
+}
+
 header{
     display: flex;
     flex-direction: row-reverse;
