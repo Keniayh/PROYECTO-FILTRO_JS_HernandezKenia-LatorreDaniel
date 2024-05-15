@@ -336,3 +336,13 @@ progress[value]::-webkit-progress-value {
     background-color: #298bfe;
     border-radius: 10px
 }
+
+/*////////////////////////////////////////////////////////////////*/
+
+.caja1{
+    display: flex;
+}
+
+.circle{
+    
+}
