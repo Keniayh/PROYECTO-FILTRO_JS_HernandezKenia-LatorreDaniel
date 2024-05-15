@@ -1,0 +1,173 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #14152C;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../Storage/font/Roboto-Regular.ttf);
+}
+
+*{
+    font-family: 'Roboto';
+    color: white;
+    font-size: 1vw;
+}
+
+header{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 25vw 50vw 25vw;
+    background: linear-gradient(to top,rgb(141, 158, 255) , 20%, #14152C);
+    grid-template-rows: 90vh;
+}
+
+#namee{
+    font-size: 2vw;
+}
+
+
+.options{
+    position: absolute;
+    top: 97%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#options{
+    width: 35vw;
+    height: 6vw;
+}
+#company{
+    width: 2vw;
+    height: 2vw;
+}
+.company{
+    position: absolute;
+    top: 95%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+#companylet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#capsules{
+    width: 2vw;
+    height: 2vw;
+}
+.capsules{
+    position: absolute;
+    top: 95%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+}
+#capsuleslet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#rockets{
+    width: 2vw;
+    height: 2vw;
+}
+.rockets{
+    position: absolute;
+    top: 95%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+}
+#rocketslet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#history{
+    width: 2vw;
+    height: 2vw;
+}
+.history{
+    position: absolute;
+    top: 95%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+#historylet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.caja1{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.caja3{
+    display: grid;
+    grid-template-rows: 60vh 30vh;
+    align-content: center;
+}
+
+button{
+    width: 3vw;
+    height: 4vh;
+    margin: 0.5vw;
+    background-color: #30326e;
+    border: 1px solid #14152C;
+    border-radius: 15px;
+}
+
+#vista-previa{
+    width: 80%;
+    height: 70vh;
+    margin-top: 2vw;
+    
+}
+
+.pagina{
+    display: flex;
+    justify-content: center;    
+}
+
+div#eventDate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 45%;
+}
+
+.date{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}

@@ -359,7 +359,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .circle-progress-bar{
-    margin: 1vw;
+    margin: 0 10%;
 }
 
 #speed{
