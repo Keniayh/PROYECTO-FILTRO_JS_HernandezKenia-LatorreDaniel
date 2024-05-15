@@ -1,21 +1,161 @@
-body {
-    overflow: hidden;
-    margin: 0%;
-    padding: 0%;
-    width: 100vw;
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #14152C;
+    
+}
+.container{
+    display: grid;
     height: 100vh;
-   /*  background: radial-gradient(    rgb(255, 255, 255), blue); */
+    width: 100vw;
+    grid-template-columns: 25vw 50vw 25vw;  
+    background: linear-gradient(to top,rgb(141, 158, 255) , 20%, #14152C);
+}
+#titulo{
+    color: white;
+    font-size: 5vw;
+    width: 30vw;
+}
+.titulo{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#spacex{
+    width: 20vw;
+    height: 5vw;
+}
+.spacex{
+    position: absolute;
+    top: 40%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+}
+#general{
+    color: white;
+    font-size: 1vw;
+    width: 30vw;
+}
+.general{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+#links{
+    color: white;
+    font-size: 1vw;
+    width: 30vw;
+}
+.links{
+    position: absolute;
+    top: 58%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+#summary{
+    color: white;
+    font-size: 1vw;
+    width: 30vw;
+}
+.summary{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#location{
+    color: white;
+    font-size: 1vw;
+    width: 30vw;
+}
+.location{
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+.options{
+    position: absolute;
+    top: 97%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#options{
+    width: 35vw;
+    height: 6vw;
+}
+#company{
+    width: 2vw;
+    height: 2vw;
+}
+.company{
+    position: absolute;
+    top: 95%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+#companylet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#capsules{
+    width: 2vw;
+    height: 2vw;
+}
+.capsules{
+    position: absolute;
+    top: 95%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+}
+#capsuleslet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#rockets{
+    width: 2vw;
+    height: 2vw;
+}
+.rockets{
+    position: absolute;
+    top: 95%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+}
+#rocketslet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#history{
+    width: 2vw;
+    height: 2vw;
+}
+.history{
+    position: absolute;
+    top: 95%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+#historylet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.container {
-
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    /* Ajusta el valor para cambiar el tamaño del triángulo */
-    border-right: 50px solid transparent;
-    /* Ajusta el valor para cambiar el tamaño del triángulo */
-    border-bottom: 86.6px solid red;
-    /* Ajusta el color y el tamaño para cambiar el aspecto del triángulo */
-
-}
