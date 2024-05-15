@@ -1,3 +1,20 @@
+function generateCircularProgressBar(percent, diameter, strokeWidth) {
+    const radius = diameter / 2;
+    const circumference = Math.PI * (radius * 2);
+    const progressLength = ((100 - percent) / 100) * circumference;
+
+    return `
+        <div class="circle-progress-bar">
+            <svg width="${diameter}" height="${diameter}">
+                <circle cx="${radius}" cy="${radius}" r="${radius - (strokeWidth / 2)}" fill="none" stroke="#ddd" stroke-width="${strokeWidth}"></circle>
+                <circle cx="${radius}" cy="${radius}" r="${radius - (strokeWidth / 2)}" fill="none" stroke="#007bff" stroke-width="${strokeWidth}" stroke-dasharray="${circumference}" stroke-dashoffset="${progressLength}"></circle>
+            </svg>
+            <div class="circleInfo">
+                <strong>${percent.toFixed(2)}%</strong>
+            </div>
+        </div>
+    `;
+}
 
 
 function fetchRockets(index) {
@@ -140,10 +157,14 @@ function displayHeaderRockets(rocket) {
     <div class="informationContainer" id="informationNave1">
         <div class="progress-container">
             <label id="spam">Rocket diameter : </label>
-            <progress max="13.1" value="${rocket.diameter.meters}"></progress>
+            <progress max="12.2" value="${rocket.diameter.meters}"></progress>
         </div>
         <div class="div2">
-            <span id="spam">${(rocket.diameter.meters).toString().replace(".", ",") + "     M"}<br>${(rocket.diameter.feet).toString().replace(".", ",") + "     F"}</span>
+            <span id="spam">
+                ${(rocket.diameter.meters && rocket.diameter.meters ? (rocket.diameter.meters).toString().replace(".", ",") + "     M" : '')}
+                <br>
+                ${(rocket.diameter.meters && rocket.diameter.meters ? (rocket.diameter.feet).toString().replace(".", ",") + "     F" : '')}
+            </span>
         </div>
     </div>
     <div class="informationContainer" id="informationNave2">
@@ -164,22 +185,31 @@ function displayHeaderRockets(rocket) {
             <span id="spam"><span id="spam">${(rocket.height.meters).toString().replace(".", ",") + "     M"}<br>${(rocket.height.feet).toString().replace(".", ",") + "     F"}</span></span>
         </div>
     </div>
-    <div class="informationContainer" id="informationNave7">
+    <div class="informationContainer" id="informationNave7" style="display: ${(rocket.second_stage.payloads.composite_fairing.diameter && (rocket.second_stage.payloads.composite_fairing.diameter.meters || rocket.second_stage.payloads.composite_fairing.diameter.feet)) ? 'flex' : 'none'}">
         <div class="progress-container">
             <label id="spam">Diameter rocket shield : </label>
             <progress max="5.2" value="${(rocket.second_stage.payloads.composite_fairing.diameter.meters)}"></progress>
         </div>
         <div class="div2">
-            <span id="spam"><span id="spam">${(rocket.second_stage.payloads.composite_fairing.diameter.meters).toString().replace(".", ",") + "     M"}<br>${(rocket.second_stage.payloads.composite_fairing.diameter.feet).toString().replace(".", ",") + "     F"}</span></span>
+            <span id="spam">
+                ${(rocket.second_stage.payloads.composite_fairing.diameter && rocket.second_stage.payloads.composite_fairing.diameter.meters ? (rocket.second_stage.payloads.composite_fairing.diameter.meters).toString().replace(".", ",") + "     M" : '')}
+                <br>
+                ${(rocket.second_stage.payloads.composite_fairing.diameter && rocket.second_stage.payloads.composite_fairing.diameter.feet ? (rocket.second_stage.payloads.composite_fairing.diameter.feet).toString().replace(".", ",") + "     F" : '')}
+            </span>
+        
         </div>
     </div>
-    <div class="informationContainer" id="informationNave7">
+    <div class="informationContainer" id="informationNave7" style="display: ${(rocket.second_stage.payloads.composite_fairing.diameter && (rocket.second_stage.payloads.composite_fairing.diameter.meters || rocket.second_stage.payloads.composite_fairing.diameter.feet)) ? 'flex' : 'none'}">
         <div class="progress-container">
             <label id="spam">Height rocket shield : </label>
             <progress max="13.1" value="${(rocket.second_stage.payloads.composite_fairing.height.meters)}"></progress>
         </div>
         <div class="div2">
-            <span id="spam"><span id="spam">${(rocket.second_stage.payloads.composite_fairing.height.meters).toString().replace(".", ",") + "     M"}<br>${(rocket.second_stage.payloads.composite_fairing.height.feet).toString().replace(".", ",") + "     F"}</span></span>
+            <span id="spam">
+                ${(rocket.second_stage.payloads.composite_fairing.height && rocket.second_stage.payloads.composite_fairing.height.meters ? (rocket.second_stage.payloads.composite_fairing.height.meters).toString().replace(".", ",") + "     M" : '')}
+                <br>
+                ${(rocket.second_stage.payloads.composite_fairing.height && rocket.second_stage.payloads.composite_fairing.height.feet ? (rocket.second_stage.payloads.composite_fairing.height.feet).toString().replace(".", ",") + "     F" : '')}
+            </span>
         </div>
     </div>
     `;
@@ -205,8 +235,30 @@ function displayHeaderRockets(rocket) {
         // Agregar el div al contenedor principal
         informationNave.appendChild(weightDiv);
     });
+    // Calcular los porcentajes
+    let percent = ((rocket.engines.thrust_sea_level.kN) / ((rocket.engines.thrust_sea_level.kN + rocket.engines.thrust_vacuum.kN)) * 100);
+    let percentt = ((rocket.engines.thrust_vacuum.kN) / ((rocket.engines.thrust_sea_level.kN + rocket.engines.thrust_vacuum.kN)) * 100);
+
+    // Variables para el tamaño del círculo de progreso
+    const diameter = 100; // Diámetro del círculo en píxeles
+    const strokeWidth = 10; // Ancho de la barra de progreso en píxeles
+    const radius = diameter / 2;
+    const circumference = Math.PI * (radius * 2);
+    const progressLength = (percent / 100) * circumference;
+    const progressLengtht = (percentt / 100) * circumference;
 
 
+    // Limpiar el contenido existente en el contenedor de velocidad
+    let speedRocket = document.getElementById("speed");
+    speedRocket.innerHTML = '';
+
+    // Generar HTML para la primera barra de progreso (Atmospheric acceleration)
+    let progressBarHTML = generateCircularProgressBar(percent, diameter, strokeWidth);
+    speedRocket.innerHTML = progressBarHTML;
+
+    // Generar HTML para la segunda barra de progreso (Speed in space)
+    let progressBarHTMLt = generateCircularProgressBar(percentt, diameter, strokeWidth);
+    speedRocket.innerHTML += progressBarHTMLt;
 }
 
 function generateProgressBar(value, max) {
