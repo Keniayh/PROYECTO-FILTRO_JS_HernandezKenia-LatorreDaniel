@@ -70,7 +70,7 @@ function displayHeaderRockets(rocket) {
 
     let generalInfo = document.getElementById("headerRockets");
     generalInfo.innerHTML = `
-        <p id="namee">${rocket.name}</p>
+        <h2 id="namee">${rocket.name}</h2>
     `;
     let imageRocket = document.getElementById("image");
     imageRocket.innerHTML = `
