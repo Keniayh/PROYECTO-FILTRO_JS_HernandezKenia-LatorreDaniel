@@ -2,8 +2,36 @@ body{
     margin: 0;
     padding: 0;
     background-color: #14152C;
+    overflow: hidden;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url(../Storage/font/Roboto-Regular.ttf);
+}
+
+*{
+    font-family: 'Roboto';
+}
+
+*::-webkit-scrollbar {
+    height: 0.8vi;
+    width: 0.8vi;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-track:hover,
+*::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 0.1vi solid #ffffff; 
+    background-color: #42487e;
+    border-radius: 10px;
+}
 
 .infoRoc{
     display: flex;
@@ -46,20 +74,20 @@ p{
 .container{
     height: 90vh;
     display: grid;
-    grid-template-columns: 20vw 60vw 20vw;
+    grid-template-columns: 25vw 50vw 25vw;
     background: linear-gradient(to top,rgb(141, 158, 255) , 20%, #14152C);
 }
 
 .box2{
     display: grid;
-    grid-template-rows:  30vh 50vh 10vh;
+    grid-template-rows:  25vh 50vh 15vh;
 }
 
 /*///////////////////////////////////////////////*/
 
 .caja2{
     display: grid;
-    grid-template-columns: 20vw 20vw 20vw;
+    grid-template-columns: 17vw 16vw 17vw;
 }
 
 /* .loding{
@@ -88,8 +116,7 @@ p{
 
 
 .imgNave{
-    width: 305px;
-    height: 190px;
+    width: 20vw;
     border-radius: 10px;
     object-fit: cover;
     box-shadow: 0px 0px 10px var(--color--one);
@@ -117,22 +144,26 @@ p{
 
 .botones,
 .infoNave {
-    margin: 2vw;
+    margin: 2vw 0vw;
+    width: 90%;
 }
 
-.box3{
+.botones{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
 }
 
 #botones{
     border: 1px solid#14152C;
     color: white;
     background-color: rgb(85, 85, 190);
-    width: 2vw;
-    height: 4vh;
+    width: 3vw;
+    height: 4.5vh;
+    font-size: 1vw;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0.5vw;    
 }
 
 #options{
@@ -153,13 +184,15 @@ hr{
 
 #h3{
     color: white;
-    margin: 0 0 0 2vw;    
+    margin: 0 0 0 2vw;
+    font-size: 1vw;    
 }
 
 .moreInfo{
     display: flex;
     flex-direction: column;
-    margin: 2vw;
+    margin: 2vw 0vw;
+    width: 95%;
 }
 
 .moreInfoRoc{
@@ -176,11 +209,130 @@ hr{
 #spam{
     color: white;
     font-size: 1vw;
-    margin: 0.5vw;
+    margin: 0vw;
 }
 
 #strom{
     color: white;
     font-size: 1vw;
     margin: 0.5vw;
+}
+
+/*//////////////////////////////////////////////////////////*/
+.box3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.informationContainer{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5vw 0vw;
+}
+
+.options{
+    position: absolute;
+    top: 97%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#options{
+    width: 35vw;
+    height: 6vw;
+}
+#company{
+    width: 2vw;
+    height: 2vw;
+}
+.company{
+    position: absolute;
+    top: 95%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+#companylet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    transform: translate(-50%, -50%);
+}
+#capsules{
+    width: 2vw;
+    height: 2vw;
+}
+.capsules{
+    position: absolute;
+    top: 95%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+}
+#capsuleslet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    transform: translate(-50%, -50%);
+}
+#rockets{
+    width: 2vw;
+    height: 2vw;
+}
+.rockets{
+    position: absolute;
+    top: 95%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+}
+#rocketslet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    transform: translate(-50%, -50%);
+}
+#history{
+    width: 2vw;
+    height: 2vw;
+}
+.history{
+    position: absolute;
+    top: 95%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+#historylet{
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    top: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-container {
+    margin-bottom: 10px;
+}
+
+progress {
+    width: 100%;
+}
+
+progress[value] {
+    -webkit-appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: transparent;
+    border-radius: 10px; /* Fondo transparente */
+    height: 0.5em;
+    width: 100%;
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: #298bfe;
+    border-radius: 10px
 }
