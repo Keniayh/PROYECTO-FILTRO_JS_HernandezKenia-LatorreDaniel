@@ -39,10 +39,10 @@ function displayInfoCompany(company) {
 
     let link = document.getElementById("links");
     link.innerHTML = `
-    <ul>${company.links.website}</ul>
-    <ul>${company.links.flickr}</ul>
-    <ul>${company.links.twitter}</ul>
-    <ul>${company.links.elon_twitter}</ul>
+      <a href="${company.links.website}"><img src="/Storage/img/spacex_logo_icon_144865.png"></a></ul>
+      <a href="${company.links.flickr}"><img src="/Storage/img/49285.png"></a></ul>
+      <a href="${company.links.twitter}"><img src="/Storage/img/twitter-brand-new-logo-3-d-with-new-x-shaped-graphic-of-the-world-s-most-popular-social-media-free-png.webp"></a></ul>
+      <a href="${company.links.elon_twitter}"><img src="/Storage/img/44948.png"></a></ul>
     `
     let summary = document.getElementById("summary");
     summary.innerHTML = `
