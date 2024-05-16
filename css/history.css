@@ -183,3 +183,82 @@ div#eventDate{
     border-radius: 20px;
     padding: 0 1vw;
 }
+
+
+@media (max-width: 500px) {
+    *{
+        font-size: 4vw;
+    }
+    header{
+        height: 15%;
+    }
+    body{
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    button{
+        width: 9vw;
+        height: 4vh;
+    }
+    .infoHistory{
+        padding: 3vw;
+        margin: 2vw;
+        border: 1px solid rgb(103, 127, 194);
+    }
+    #namee{
+        font-size: 5vw;
+        margin: 8vw 0 0 0;
+    }
+    h2, p {
+        font-size: 3.5vw;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 95%;
+    }
+    div#eventDate{
+        margin: 7vw 2vw;
+        border: 1px solid rgb(103, 127, 194);
+    }
+    /*menuuuuuuuuuuuuuuuuuu*/
+    .options{
+        position: fixed;
+        top: -1;
+        left: 50vw;
+    }
+    .rockets, .capsules, .history, .company{
+        position: fixed;
+        top: 96%;
+    }
+    .rockets{
+        left: 56vw;
+    }
+    .capsules{
+        left: 42vw;
+    }
+    .history{
+        left: 69vw;
+    }
+    .company{
+        left: 28vw;
+    }
+    #options{
+        width: 80vw;
+        height: 9vh;
+    }
+    #companylet, #capsuleslet, #historylet, #rocketslet{
+        font-size: 3vw;
+        position: fixed;
+        top: 95%;
+        left: 50%;
+    }
+    #company, #capsules, #history, #rockets{
+        width: 6vw;
+        height: 3vh;
+    }
+    .headerTitle{
+        height: 15vh;
+    }
+}
