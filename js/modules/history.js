@@ -76,3 +76,45 @@ function displayHeaderHistory(rocket) {
     `;
     
 }
+
+
+
+class MoreAbout extends HTMLElement {
+    constructor() {
+        super();
+
+        // Adjuntar un shadow DOM al elemento personalizado
+        const shadow = this.attachShadow({ mode: 'open' });
+
+        // Crear un contenedor para el contenido del componente
+        const container = document.createElement('div');
+        container.classList.add('containe');
+
+        // Crear un contenedor para el contenido del slot
+        const slot = document.createElement('slot');
+
+        // Adjuntar los elementos al shadow DOM
+        container.appendChild(slot);
+        shadow.appendChild(container);
+
+        // Estilos del componente
+        const style = document.createElement('style');
+        style.textContent = `
+            .containe {
+                padding: 16px;
+                border-radius: 8px;
+            }
+            ::slotted(*) {
+                margin: 0;
+                font-size: 1em;
+                color: #666;
+            }
+        `;
+
+        // Adjuntar estilos al shadow DOM
+        shadow.appendChild(style);
+    }
+}
+
+// Definir el nuevo elemento
+customElements.define('more-about', MoreAbout);
