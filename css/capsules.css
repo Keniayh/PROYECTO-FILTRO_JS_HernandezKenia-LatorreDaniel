@@ -261,3 +261,105 @@ img{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+@media (max-width: 500px) {
+    *{
+        font-size: 4vw;
+    }
+    body{
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    button{
+        width: 9vw;
+        height: 4vh;
+    }
+    h2, p {
+        font-size: 4vw;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 95%;
+    }
+    /*menuuuuuuuuuuuuuuuuuu*/
+    .options{
+        position: fixed;
+        top: -1;
+        left: 50vw;
+    }
+    .rockets, .capsules, .history, .company{
+        position: fixed;
+        top: 96%;
+    }
+    .rockets{
+        left: 56vw;
+    }
+    .capsules{
+        left: 42vw;
+    }
+    .history{
+        left: 69vw;
+    }
+    .company{
+        left: 28vw;
+    }
+    #options{
+        width: 80vw;
+        height: 9vh;
+    }
+    #companylet, #capsuleslet, #historylet, #rocketslet{
+        font-size: 3vw;
+        position: fixed;
+        top: 95%;
+        left: 50%;
+    }
+    #company, #capsules, #history, #rockets{
+        width: 6vw;
+        height: 3vh;
+    }
+    .caja1{
+        height: 40vh;
+        display: flex;
+        flex-direction: row;
+    }
+    .cosodiv, .cosodiv2{
+        display: none;
+    }
+    #letras{
+        font-size: 3.5vw;
+    }
+    .status{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    #circulito{
+        height: 2vh;
+        width: 5vw;
+    }
+    .headerTitle{
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+    .caja2{
+        height: 35vh;
+        font-size: 4vw;
+    }
+    #lato{
+        width: 55vw;
+        height: 25vh;
+        
+    }
+    .caja3{
+        height: 50vh;
+        font-size: 4vw;
+    }
+    #prevButton, #nextButton{
+        width: 20vw;
+        font-size: 4vw;
+        height: 5vh;
+    }
+}
