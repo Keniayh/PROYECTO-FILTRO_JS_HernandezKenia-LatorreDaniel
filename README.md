@@ -34,3 +34,15 @@
 <p align="left">Kenia Hernandez y Daniel Latorre.</p>
 
 ###
+
+<h2 align="left">Propuestas</h2>
+
+<p align="left">https://www.figma.com/design/xjTOfJxB3UPpSm0LF19Msf/Untitled?node-id=0-1&t=bYS8V37aJyQvw6fj-0</p>
+
+###
+
+<h2 align="left">Rubrica</h2>
+
+<p align="left">https://hallowed-slug-719.notion.site/P-JS-1-EL-ELICO-TERO-7cdb87c4a1a84d299001c02bc32b97dc</p>
+
+###
