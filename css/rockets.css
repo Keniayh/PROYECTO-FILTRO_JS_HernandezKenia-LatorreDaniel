@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #14152C;
+    background: linear-gradient(to top,rgb(141, 158, 255) , 20%, #14152C);
     overflow: hidden;
 }
 
@@ -132,7 +132,7 @@ p{
 }
 
 .headerTitle{
-    height: 10vh;
+    height: 15vh;
     color: white;
     font-size: 2vw;
     display: flex;
@@ -364,4 +364,112 @@ progress[value]::-webkit-progress-value {
 
 #speed{
     display: flex;
+}
+
+@media (max-width: 500px) {
+    *{
+        font-size: 3vw;
+    }
+    body{
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    #namee{
+        font-size: 5vw;
+    }
+    h2, p {
+        font-size: 3.5vw;
+    }
+    #wiki{
+        font-size: 3.5vw;
+    }
+    #icono{
+        width: 7vw;
+        margin: 1vw 4vw;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    #speed{
+        flex-direction: column;
+        margin: 5vw;
+    }
+    .box2{
+        display: flex;
+        flex-direction: column;
+    }
+    .caja2{
+        display: flex;
+        flex-direction: column;
+    }
+    .imgNave{
+        width: 50vw;
+    }
+    .add, .add2{
+        height: 60%;
+        display: flex;
+        margin: 0 5vw;
+    }
+    .joa{
+        display: none;
+    }
+    #spam, #strom, #h3{
+        font-size: 4vw;
+    }
+    .moreInfo{
+        height: 30vh;
+    }
+    .add2{
+        margin: 0 5vw 15vw 5vw;
+    }
+    #botones{
+        width: 9vw;
+        height: 4.5vh;
+        font-size: 4vw;
+    }
+    .botones{
+        height: 25vh;
+    }
+    /*menuuuuuuuuuuuuuuuuuu*/
+    .options{
+        position: fixed;
+        top: -1;
+        left: 50vw;
+    }
+    .rockets, .capsules, .history, .company{
+        position: fixed;
+        top: 96%;
+    }
+    .rockets{
+        left: 56vw;
+    }
+    .capsules{
+        left: 42vw;
+    }
+    .history{
+        left: 69vw;
+    }
+    .company{
+        left: 28vw;
+    }
+    #options{
+        width: 80vw;
+        height: 9vh;
+    }
+    #companylet, #capsuleslet, #historylet, #rocketslet{
+        font-size: 3vw;
+        position: fixed;
+        top: 95%;
+        left: 50%;
+    }
+    #company, #capsules, #history, #rockets{
+        width: 6vw;
+        height: 3vh;
+    }
+    .headerTitle{
+        height: 15vh;
+    }
 }
